@@ -18,9 +18,11 @@
     computed: {
       getPosition () {
         if (this.message.sender === this.$store.state.users.currentUser) {
-          return 'my message'
+          //return 'my message'
+          return 'sent' 
         } else {
-          return 'message'
+          //return 'message' 
+          return 'replies' 
         }
       }//A simple check to decide if the message was sent by the current user and to position it accordingly.
     }
@@ -28,11 +30,11 @@
 </script>
 
 <style scoped>
-.my.message {
+/* .my.message {
   text-align: right;
 }
 
 .message-container {
   border: 1px solid silver;
-}
+} */
 </style>
