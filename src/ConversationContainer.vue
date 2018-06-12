@@ -9,7 +9,7 @@
 						<span class="contact-status busy"></span>
 						<img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
 						<div class="meta">
-							<p class="name">Conversation ID: {{ id }}</p>
+							<p class="name">{{ id }}</p>
 							<p class="preview">Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
 						</div>
 					</div>
@@ -18,63 +18,25 @@
 		</div>
 	</div>
 	<div class="content">
-		<div class="messages">
-			<ul>
-				<!-- <li class="sent">
-					<img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />
-					<p>How the hell am I supposed to get a jury to believe you when I am not even sure that I do?!</p>
-				</li>
-				<li class="replies">
-					<img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
-					<p>When you're backed against the wall, break the god damn thing down.</p>
-				</li> -->
-				<li class="replies">
-					<img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
-					<p>
-          <Message 
-            v-for="message in conversation.messages" 
-            :message="message" 
-            :key="message.created" 
-          />
-					</p>
-				</li>
-        	<li class="sent">
-					<img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
-					<p>
-          <Message 
-            v-for="message in conversation.messages" 
-            :message="message" 
-            :key="message.created" 
-          />
-					</p>
-				</li>
-			</ul>
+  <div class="messages">
+    <ul>
+     <Message 
+        v-for="message in conversation.messages" 
+        :message="message" 
+        :key="message.created" 
+      />    
+    </ul>
 		</div>
 		<div class="message-input">
 			<div class="wrap">
-			<!-- <input type="text" placeholder="Write your message..." /> -->
       <input v-model="newMessageText" @keyup.enter="send" placeholder="Type something..." />
 			<i class="fa fa-paperclip attachment" aria-hidden="true"></i>
 			<button class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
 			</div>
 		</div>
 	</div>
-</div>
+</div> 
 
-
-
-  <!-- Start conversation
-  Conversation ID: {{ id }}
-  <hr>
-  <p id="tan">Hellooooo</p>
-  <Message 
-    v-for="message in conversation.messages" 
-    :message="message" 
-    :key="message.created" 
-  />
-  <br />
-  <input v-model="newMessageText" @keyup.enter="send" placeholder="Type something..." />
-  End conversation -->
 </div>
 </template>
 
